@@ -73,4 +73,4 @@
 
     List the Third-party packages required for the Assignment, if any
 
-    React-icons
+    React-icons, styled-components, date-fns

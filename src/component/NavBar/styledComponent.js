@@ -5,7 +5,7 @@ export const NavBarMainContainer = styled.div`
  display:flex;
  flex-direction:column;
  width:100%;
- max-width:300px;
+ max-width:200px;
  padding:10px;
 `
 export const NavItemContaier = styled.button`
