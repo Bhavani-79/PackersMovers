@@ -1,15 +1,16 @@
 import { Component } from "react";
 import NavBar from '../NavBar'
 import MoveItem from '../MoveItem'
+
 import { HomeMainContainer, Head, HomeContainer, UnorderList } from './styledComponent'
 
 class Home extends Component {
     state = {
-        isViewClicked: false,
+
         customerData: [],
-        movesData:[],
-        viewMoreData:[],
-        inventorData:[]
+        movesData: [],
+        viewMoreData: [],
+        inventorData: []
     }
     componentDidMount() {
         this.getMovesData()
@@ -24,7 +25,6 @@ class Home extends Component {
 
         const response = await fetch(url, options)
         const data = await response.json()
-
         const updatedCustomerData = data.Customer_Estimate_Flow.map((each) => ({
             distance: each.distance,
             estimateId: each.estimate_id,
@@ -37,39 +37,43 @@ class Home extends Component {
 
         }))
 
-        this.setState({ customerData: data, movesData:updatedCustomerData })
-
+        this.setState({ customerData: data, movesData: updatedCustomerData })
     }
 
-     onClickViewButton = (id) => {
-  const {customerData} = this.state
+    onClickViewButton = (id) => {
+        const { customerData } = this.state
 
-  const filteredData = customerData.Customer_Estimate_Flow.filter((each) => (each.estimate_id === id))
-       const updatedViewDetailsData = filteredData.map((each)=> ({
-        oldFloorNo:each.old_floor_no,
-        newFloorNo:each.new_floor_no,
-        oldElevator:each.old_elevator_availability,
-        newEvelator:each.new_elevator_availability,
-       
-        customItemName:each.items.customItems.items[0].item_name,
-        customItemQuantity:each.items.customItems.items[0].item_qty,
+        const isViewDetailsClickked = customerData.Customer_Estimate_Flow.filter((each) => (each.estimate_id === id))
 
-        
-     }))
+        const updatedViewDetailsData = isViewDetailsClickked.map((each) => ({
+            oldFloorNo: each.old_floor_no,
+            newFloorNo: each.new_floor_no,
+            oldElevator: each.old_elevator_availability,
+            newEvelator: each.new_elevator_availability,
+            oldHouseInfo: each.old_house_additional_info,
+            estimateId: each.estimate_id,
+            customData: each.items.customItems.items,
 
-     this.setState((prevSate) => ({isViewClicked:!prevSate.isViewClicked, viewMoreData:updatedViewDetailsData}))
+        }))
 
+        const updatedInventoryData = isViewDetailsClickked[0].items.inventory.map((each) => ({
+            category: each.category,
+            displayName: each.displayName,
+            id: each.id,
+        }))
+        this.setState({ viewMoreData: updatedViewDetailsData, inventorData: updatedInventoryData })
     }
+
     render() {
-        const { movesData } = this.state
-       
+        const { movesData, viewMoreData, inventorData } = this.state
+
         return (
             <HomeMainContainer>
                 <NavBar />
                 <HomeContainer>
                     <Head>My Moves</Head>
                     <UnorderList>
-                        {movesData.map((each) => (<MoveItem details={each} key={each.estimateId} onClickViewButton={this.onClickViewButton}/>))}
+                        {movesData.map((each) => (<MoveItem details={each} key={each.estimateId} viewMoreData={viewMoreData} inventorData={inventorData} onClickViewButton={this.onClickViewButton} />))}
                     </UnorderList>
 
                 </HomeContainer>

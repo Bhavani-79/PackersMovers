@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaArrowRightLong, FaCalendarDays } from "react-icons/fa6";
 import { MdHome } from "react-icons/md";
 import { GiPathDistance } from "react-icons/gi";
@@ -5,11 +6,14 @@ import { BiSolidError } from "react-icons/bi";
 import { GrFormEdit } from "react-icons/gr";
 import { FaCheckSquare, FaBoxes } from "react-icons/fa";
 import { format } from 'date-fns'
+import ViewDetails from "../ViewDetails";
 
 import { MoveItemContainer, AddressContainer, FromAddress, FormAddressPara, FromHead, ArrowContainer, ToAddress, ToAddressPara, ToHead, RequestContainer, RequestHead, RequestPara, PropertyItemsContainer, PropertySizeContainer, IconContainer, PropertyPara, ItemContainer, ItemPara, DistanceContainer, DistancePara, CalenderContainer, CalenderPara, IsFlexiableContainer, IsFlexiablePara, ViewButton, QuoteButton, DisclaimerHead, DisclaimerContainer, DisclaimerPara } from './styledComponent'
 
+
 const MoveItem = (props) => {
-    const { details, onClickViewButton } = props
+    const [isActive, setActive] = useState(false)
+    const { details, onClickViewButton, viewMoreData, inventorData } = props
     const { distance,
         estimateId,
         movingFrom,
@@ -17,11 +21,14 @@ const MoveItem = (props) => {
         movingOn,
         propertySize,
         totalItems,
-        id, } = details
+    } = details
 
     const onClickView = () => {
         onClickViewButton(estimateId)
+        setActive((prevState) => !prevState)
     }
+
+
     return (
         <MoveItemContainer>
             <AddressContainer>
@@ -71,6 +78,7 @@ const MoveItem = (props) => {
                 <DisclaimerHead>Disclaimer: </DisclaimerHead>
                 <DisclaimerPara>Please update your move date before two days od shifting</DisclaimerPara>
             </DisclaimerContainer>
+            {isActive && (<ViewDetails details={viewMoreData} inventorData={inventorData} />)}
         </MoveItemContainer>
     )
 }

@@ -32,7 +32,7 @@ const NavBar = () => (
         <NavItemContaier>
             <NavIcon>
                 <BiSolidLogOutCircle color="#6c6c6c" size="30" />
-                </NavIcon>
+            </NavIcon>
             <NavPara>LOGOUT</NavPara>
 
         </NavItemContaier>
