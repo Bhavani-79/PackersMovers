@@ -34,6 +34,8 @@ list-style-type:none;
  margin:10px;
   width:100%;
  max-width:300px;
+ margin-left:-30px
+
 `
 
 export const CategoryItemHead = styled.h1`
@@ -52,9 +54,14 @@ display:flex;
  list-style-type:none;
  justify-content:space-between;
    width:100%;
- max-width:400px;
+ max-width:200px;
  margin-left:-40px;
  margin-bottom:0px;
+  @media screen and (max-width:786px){
+  width:100%;
+ max-width:35vw;
+ 
+ }
 
 `
 export const CategoryInnerItemPara = styled.p`
@@ -68,6 +75,10 @@ color: #16181b;
 font-size:15px;
 margin-top:-10px;
 margin-left:-20px;
+
+@media screen and (max-width:786px){
+margin-left:-40px;
+}
 `
 
 export const CategoryInnerItem = styled.div`

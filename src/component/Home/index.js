@@ -52,9 +52,11 @@ class Home extends Component {
             newEvelator: each.new_elevator_availability,
             oldHouseInfo: each.old_house_additional_info,
             estimateId: each.estimate_id,
-            customData: each.items.customItems.items,
+            customData: each.items.customItems,
 
         }))
+
+
 
         const updatedInventoryData = isViewDetailsClickked[0].items.inventory.map((each) => ({
             category: each.category,

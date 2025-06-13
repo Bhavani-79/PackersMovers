@@ -16,17 +16,29 @@ display:flex;
  justify-content:space-between;
  width:100%;
  margin-bottom:10px;
+ @media screen and (max-width:786px){
+
+ max-width:100vw;
+ }
 `
 
 export const FromAddress = styled.div`
  display:flex;
  flex-direction:column;
+   @media screen and (max-width:786px){
+
+ max-width:300px;
+ }
 `
 export const ToAddress = styled.div`
  display:flex;
  flex-direction:column;
  width:100%;
  max-width:350px;
+  @media screen and (max-width:786px){
+
+ max-width:300px;
+ }
 `
 export const FromHead = styled.h1`
 color: #16181b;
@@ -49,6 +61,10 @@ width:100%;
 max-width:380px;
 margin-top:0px;
 padding:0px;
+  @media screen and (max-width:786px){
+font-size:12px;
+ max-width:300px;
+ }
 `
 export const ToAddressPara = styled.p`
 color: #7b7b7c;
@@ -58,6 +74,11 @@ max-width:380px;
 margin-top:0px;
 padding:0px;
 margin-left:0px;
+  @media screen and (max-width:786px){
+font-size:12px;
+ max-width:300px;
+
+ }
 `
 
 export const ArrowContainer = styled.div`
@@ -70,6 +91,12 @@ export const ArrowContainer = styled.div`
   align-items:center;
   justify-content:center;
   margin-top:20px;
+  @media screen and (max-width:786px){
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  margin-right:10px;
+}
 `
 
 export const RequestContainer = styled.div`
@@ -96,6 +123,9 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
  margin-bottom:10px;
+ @media screen and (max-width:786px){
+  flex-wrap:wrap;
+ }
 `
 export const PropertySizeContainer = styled.div`
 display:flex;
@@ -180,10 +210,15 @@ export const DisclaimerHead = styled.p`
 font-size:15px;
 font-family:"roboto";
 margin-top:7px;
+
 `
 
 export const DisclaimerPara = styled.p`
 color: #7b7b7c;
 font-size:15px;
 margin-top:7px;
+
+@media screen and (max-width:786px){
+font-size:12px;
+}
 `

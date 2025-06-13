@@ -4,8 +4,8 @@ import { CategoryList, CatergoryHead, CategoryListContainer, CategoryUnorder, Ca
 
 const CategoryItem = (props) => {
   const { details } = props
-
   const { displayName } = details
+
 
   const [isCategoryExpand, setCategory] = useState(false)
   const onClickDownArrow = () => {
@@ -43,19 +43,27 @@ const CategoryItem = (props) => {
 
           </CategoryItemList>
         ))}
+
       </CategoryUnorder>
     )
   }
 
 
   return (
-    <CategoryListContainer>
-      <CategoryList >
-        <CatergoryHead>{displayName}</CatergoryHead>
-        <RiArrowDropDownLine color=" #5e5e5e" size="30" onClick={onClickDownArrow} />
-      </CategoryList>
-      {isCategoryExpand && renderCategoryDetails()}
-    </CategoryListContainer>
+    <>
+      <CategoryListContainer>
+        <CategoryList >
+
+          <CatergoryHead>{displayName}</CatergoryHead>
+          <RiArrowDropDownLine color=" #5e5e5e" size="30" onClick={onClickDownArrow} />
+
+        </CategoryList>
+        {isCategoryExpand && renderCategoryDetails()}
+
+      </CategoryListContainer>
+
+    </>
+
   )
 }
 

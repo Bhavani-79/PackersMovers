@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const HomeMainContainer = styled.div`
  display:flex;
  flex-direction:row;
+ @media screen and (max-width:786px){
+ display:flex;
+ flex-direction:column;
+
+ }
 `
 export const HomeContainer = styled.div`
  display:flex;
@@ -10,6 +15,10 @@ export const HomeContainer = styled.div`
  width:100%;
  max-width:80vw;
    margin-top:20px;
+
+   @media screen and (max-width:786px){
+    max-width:100vw;
+   }
 `
 export const Head = styled.h1`
   color: #000000;

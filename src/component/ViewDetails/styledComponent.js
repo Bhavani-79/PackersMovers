@@ -18,6 +18,9 @@ export const AdditionalHead = styled.h1`
 color: #16181b;
 font-size:20px;
 font-family:"roboto";
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 
 `
 
@@ -27,6 +30,9 @@ color: #ffffff;
 height:30px;
 width:200px;
 cursor:pointer;
+@media screen and (max-width:786px){
+width:180px;
+}
 
 `
 
@@ -49,7 +55,9 @@ export const HouseHead = styled.h1`
 color: #16181b;
 font-size:20px;
 font-family:"roboto";
-
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 `
 
 export const HouseButton = styled.button`
@@ -58,6 +66,9 @@ color: #ffffff;
 height:30px;
 width:200px;
 cursor:pointer;
+@media screen and (max-width:786px){
+width:180px;
+}
 
 `
 
@@ -69,6 +80,9 @@ export const ExistingHouseHead = styled.h1`
 color: #ed5643;
 font-size:20px;
 font-family:"roboto";
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 
 `
 
@@ -88,6 +102,9 @@ font-size:20px;
 font-family:"roboto";
 margin-bottom:5px;
 padding:0px;
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 `
 export const FromPara=  styled.p`
 color: #7b7b7c;
@@ -103,6 +120,9 @@ font-size:20px;
 font-family:"roboto";
 margin-bottom:5px;
 padding:0px;
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 `
 export const ElevatorPara=  styled.p`
 color: #7b7b7c;
@@ -119,6 +139,9 @@ font-size:20px;
 font-family:"roboto";
 margin-bottom:5px;
 padding:0px;
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 `
 export const DistancePara=  styled.p`
 color: #7b7b7c;
@@ -138,7 +161,9 @@ export const InventoryHead = styled.h1`
 color: #16181b;
 font-size:20px;
 font-family:"roboto";
-
+@media screen and (max-width:786px){
+ font-size:13px;
+}
 `
 
 export const InventoryButton = styled.button`
@@ -147,6 +172,10 @@ color: #ffffff;
 height:30px;
 width:200px;
 cursor:pointer;
+
+@media screen and (max-width:786px){
+width:180px;
+}
 
 `
 

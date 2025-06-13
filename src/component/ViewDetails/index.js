@@ -1,5 +1,5 @@
 import CategoryItem from '../CategoryItem'
-import { MainContainer, AdditionalContainer, AdditionalMainContainer, AdditionalHead, AditionalButton, AdditionalPara, ExistingHouseHead, HouseMainContainer, HouseContainer, HouseButton, HouseHead, HouseDetailsContainer, HouseDetailsInnerContainer, FromContainer, FromHead, FromPara, ElevatorContainer, ElevatorHead, ElevatorPara, DistanceContainer, DistanceHead, DistancePara, InventoryButton, InventoryMainContainer, InventryContainer, InventoryHead, UnorderCategoryList, CategoryList, CatergoryHead } from './styledComponent'
+import { MainContainer, AdditionalContainer, AdditionalMainContainer, AdditionalHead, AditionalButton, AdditionalPara, ExistingHouseHead, HouseMainContainer, HouseContainer, HouseButton, HouseHead, HouseDetailsContainer, HouseDetailsInnerContainer, FromContainer, FromHead, FromPara, ElevatorContainer, ElevatorHead, ElevatorPara, DistanceContainer, DistanceHead, DistancePara, InventoryButton, InventoryMainContainer, InventryContainer, InventoryHead, UnorderCategoryList } from './styledComponent'
 
 const ViewDetails = (props) => {
 
@@ -9,8 +9,9 @@ const ViewDetails = (props) => {
         oldElevator,
         newEvelator,
         oldHouseInfo,
-        customItemName,
-        customItemQuantity, customData } = details[0]
+    } = details[0]
+
+
 
     return (
         <MainContainer>
@@ -76,13 +77,16 @@ const ViewDetails = (props) => {
                     <InventoryButton>Edit Inventory</InventoryButton>
                 </InventryContainer>
                 <UnorderCategoryList>
+
                     {inventorData.map((each) => (
 
                         <CategoryItem key={each.id} details={each} />
                     ))}
 
 
+
                 </UnorderCategoryList>
+
             </InventoryMainContainer>
         </MainContainer>
     )
